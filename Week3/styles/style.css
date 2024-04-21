@@ -48,7 +48,6 @@ body section.section1 div.welcomtext {
 }
 body div.container {
   margin: 20px auto;
-  background-color: blue;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 50px auto auto;

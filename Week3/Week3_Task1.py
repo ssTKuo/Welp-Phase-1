@@ -35,7 +35,7 @@ serial_to_address = {}
 for item in data_read2['data']:
     #將每個 SERIAL_NO 做為key，address作為value，存放到字典裡
     serial_to_address[item['SERIAL_NO']] = item['address']
-    print(serial_to_address)
+    # print(serial_to_address)
 
 
 
@@ -89,11 +89,11 @@ for item in data_read1["data"]["results"]:
     combined_cutcity_address=" ".join(cutcity_address)
     #print(combined_cutcity_address)
     district_name =combined_cutcity_address[0:4] 
-    print(district_name)
+    # print(district_name)
 
     list1.append([item["stitle"],district_name,item["longitude"],item["latitude"],first_jpg_url])
 
-print(list1)
+# print(list1)
 # list1_length=len(list1)
 # print(list1_length)  #確認處理了58組!!!
 
@@ -159,4 +159,23 @@ with open("mrt.csv", mode='w', newline='', encoding='utf-8-sig') as file:
         stitle_combined = ', '.join(titles)
         #寫入同一行數據
         writer.writerow([mrt, stitle_combined])
+
+
+
+import csv
+
+with open("mrt.csv", mode='w', newline='', encoding='utf-8-sig') as file:
+    writer = csv.writer(file)  
+    
+    #確定最大的景點數量以創建足夠的列  
+    max_titles = max(len(titles) for titles in mrt_to_stitle_list.values())
+    #加入自訂表頭
+    headers = ["MRT"] + [f"stitle_{i+1}" for i in range(max_titles)]
+    writer.writerow(headers)
+
+    #寫入CSV，每個景點在單獨的列
+    for mrt, titles in mrt_to_stitle_list.items():
+        #空格符號替代空值填
+        row = [mrt] + titles + [''] * (max_titles - len(titles))
+        writer.writerow(row)
 #********************************************************************************************************
