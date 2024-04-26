@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body header {
+  align-items: center;
+  text-align: center;
+  background-color: rgb(34, 51, 68);
+  font-size: 40px;
+  padding: 40px;
+  font-weight: bold;
+  color: white;
+}
+body div.A {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body div.A .text_A {
+  text-align: center;
+  color: rgb(34, 51, 68);
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+body div.A .text_B {
+  margin-top: 20px;
+  text-align: center;
+  color: blue;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+body div.A .text_B:hover {
+  background-color: black;
+}
+body section.section1 {
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(34, 51, 68);
+}
+body section.section2 {
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+body section.section2 .account,
+body section.section2 .password {
+  align-items: center;
+  padding: 5px 0;
+}
+body section.section2 .account label,
+body section.section2 .password label {
+  font-size: 16px;
+  color: rgb(34, 51, 68);
+}
+body section.section2 .account input,
+body section.section2 .password input {
+  font-size: 16px;
+  color: rgb(34, 51, 68);
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+body section.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+body section.section3 label {
+  margin-right: 10px;
+}
+body section.section4 {
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+body section.section4 input {
+  padding: 5px;
+  align-items: center;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
