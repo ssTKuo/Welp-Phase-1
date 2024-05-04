@@ -264,18 +264,19 @@ select avg(message.like_count) from message inner join member on message.member_
 +-------------------------+
 |                  5.0000 |
 +-------------------------+
-SELECT member.name, AVG(message.like_count) AS average_like_count
-    FROM message
-    INNER JOIN member ON message.member_id = member.id
-    WHERE member.username = 'test'
-    GROUP BY member.name;
-+-------+--------------------+
-| name  | average_like_count |
-+-------+--------------------+
-| test2 |             5.0000 |
-+-------+--------------------+
+
+ select member.username, AVG(message.like_count) as avg_likecount from message inner join member on message.member_id=member.id group by member.username;
++--------------+---------------+
+| username     | avg_likecount |
++--------------+---------------+
+| test         |        5.0000 |
+| Lakers       |      824.0000 |
+| Lakersfans   |      999.0000 |
+| thechosenone |      789.0000 |
+| bigmac       |        7.0000 |
++--------------+---------------+
 ```
-![Task 5_4.5](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/Task%205_4.5.JPG?raw=true)
+![final](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/final.JPG?raw=true)
 
 
 
