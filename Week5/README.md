@@ -198,10 +198,96 @@ select * from message;
 |  5 |         5 | I love BIGMAC                             |          7 | 2024-05-02 21:04:10 |
 +----+-----------+-------------------------------------------+------------+---------------------+
 ```
-![Task 5_1.1](https://github.com/your-username/your-repository/blob/main/path/to/Task%205_1.1%28showbothtables%29.JPG?raw=true)
+![Show Both Tables](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/showbothtables.JPG?raw=true)
 
 第二小題:   
-Create a new table named message, in the website database. designed as below:
-```sql
+SELECT all messages, including sender names. We have to JOIN the member table
+to get that.
 
+```sql
+SELECT message.content, member.name FROM message JOIN member ON message.member_id = member.id;
++-------------------------------------------+------------+
+| content                                   | name       |
++-------------------------------------------+------------+
+| This is test                              | test2      |
+| Lakers legendary players                  | Kobe       |
+| I will definitely succeed                 | Timmy      |
+| You don't know the power of the dark side | Anakin     |
+| I love BIGMAC                             | Hamburglar |
++-------------------------------------------+------------+
+SELECT member.name, message.content FROM message JOIN member ON message.member_id = member.id;
++------------+-------------------------------------------+
+| name       | content                                   |
++------------+-------------------------------------------+
+| test2      | This is test                              |
+| Kobe       | Lakers legendary players                  |
+| Timmy      | I will definitely succeed                 |
+| Anakin     | You don't know the power of the dark side |
+| Hamburglar | I love BIGMAC                             |
++------------+-------------------------------------------+
+SELECT * FROM message INNER JOIN member ON message.member_id = member.id;
++----+-----------+-------------------------------------------+------------+---------------------+----+------------+--------------+------------------+----------------+---------------------+
+| id | member_id | content                                   | like_count | time                | id | name       | username     | password         | follower_count | time                |
++----+-----------+-------------------------------------------+------------+---------------------+----+------------+--------------+------------------+----------------+---------------------+
+|  1 |         1 | This is test                              |          5 | 2024-05-02 20:26:03 |  1 | test2      | test         | test             |              0 | 2024-05-01 12:10:24 |
+|  2 |         2 | Lakers legendary players                  |        824 | 2024-05-02 20:41:23 |  2 | Kobe       | Lakers       | password20160413 |              0 | 2024-05-01 13:43:16 |
+|  3 |         3 | I will definitely succeed                 |        999 | 2024-05-02 20:42:35 |  3 | Timmy      | Lakersfans   | 19947788         |              0 | 2024-05-01 14:08:05 |
+|  4 |         4 | You don't know the power of the dark side |        789 | 2024-05-02 20:55:37 |  4 | Anakin     | thechosenone | blacksquadron    |              0 | 2024-05-01 14:08:05 |
+|  5 |         5 | I love BIGMAC                             |          7 | 2024-05-02 21:04:10 |  5 | Hamburglar | bigmac       | LV-426           |              0 | 2024-05-01 14:08:12 |
++----+-----------+-------------------------------------------+------------+---------------------+----+------------+--------------+------------------+----------------+---------------------+
 ```
+![Task 5_2](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/Task%205_2.JPG?raw=true)
+
+第三小題:   
+SELECT all messages, including sender names, where sender username equals to
+test. We have to JOIN the member table to filter and get that.
+```sql
+SELECT member.name, message.content FROM message INNER JOIN member ON  message.member_id = member.id WHERE member.username = 'test';
++-------+--------------+
+| name  | content      |
++-------+--------------+
+| test2 | This is test |
++-------+--------------+
+```
+![Task 5_3](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/Task%205_3.JPG?raw=true)
+
+第四、五小題:   
+Use SELECT, SQL Aggregation Functions with JOIN statement, get the average like
+count of messages where sender username equals to test.
+
+Use SELECT, SQL Aggregation Functions with JOIN statement, get the average like
+count of messages GROUP BY sender username.
+```sql
+select avg(message.like_count) from message inner join member on message.member_id = member.id where member.username = 'test';
++-------------------------+
+| avg(message.like_count) |
++-------------------------+
+|                  5.0000 |
++-------------------------+
+SELECT member.name, AVG(message.like_count) AS average_like_count
+    FROM message
+    INNER JOIN member ON message.member_id = member.id
+    WHERE member.username = 'test'
+    GROUP BY member.name;
++-------+--------------------+
+| name  | average_like_count |
++-------+--------------------+
+| test2 |             5.0000 |
++-------+--------------------+
+```
+![Task 5_4.5](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/Task%205_4.5.JPG?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
