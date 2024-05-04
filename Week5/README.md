@@ -276,6 +276,7 @@ select avg(message.like_count) from message inner join member on message.member_
 | bigmac       |        7.0000 |
 +--------------+---------------+
 ```
+![01final](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/01final.JPG?raw=true)
 ![final](https://github.com/ssTKuo/Welp-Phase-1/blob/main/Week5/final.JPG?raw=true)
 
 
