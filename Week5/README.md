@@ -200,7 +200,9 @@ select * from message;
 ```
 ![Task 5_1.1](https://github.com/your-username/your-repository/blob/main/path/to/Task%205_1.1%28showbothtables%29.JPG?raw=true)
 
-
+第二小題:   
+Create a new table named message, in the website database. designed as below:
+```sql
 
 
 
