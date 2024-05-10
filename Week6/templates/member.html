@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hants">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week4</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="headertext">歡迎光臨，請輸入帳號密碼</div>
+      </section>
+    </header>
+    <div class="A">
+      <p class="text_A">{{name}}，歡迎登入系统</p>
+      <a class="text_B" href="/signout">登出系統</a>
+    </div>
+    <hr></hr>
+    <form action="/createMessage" method="post" id="messageForm" novalidate>
+      <section class="section1">
+        <div class="login">快來留言吧</div>
+      </section>
+      <section class="section2">
+        <div class="content">
+          <label for="content">內容</label>
+          <input type="text" id="content" name="content" />
+        </div>
+      </section>
+      <section class="section4">
+        <input type="submit" value="送出" />
+      </section>
+    </form>
+    <hr></hr>
+    <!-- 顯示member資料表name與message資料表content資料 -->
+    <div class="messages">
+      {% for user_name, message_content in messages %}
+      <div class="message">
+          <div>
+              <h4>{{ user_name }}: </h4>
+          </div>
+          <div>
+              <p>{{ message_content }}</p>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  </body>
+</html>
