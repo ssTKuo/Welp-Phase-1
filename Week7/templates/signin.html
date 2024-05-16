@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hants">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week4</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="headertext">歡迎光臨，請輸入帳號密碼</div>
+      </section>
+    </header>
+    <!-- 註冊表單區塊 -->
+    <form action="/signup" method="post" id="signupForm" novalidate>
+        <section class="section1">
+        <div class="register">註冊帳號</div>
+        </section>
+        <section class="section5">
+          <div class="register">
+            <label for="register_username">姓名</label>
+            <input type="text" id="register_username" name="name" />
+          </div>
+          <div class="new_account">
+            <label for="new_username">帳號</label>
+            <input type="text" id="new_username" name="username" />
+          </div>
+          <div class="new_password">
+            <label for="new_password">密碼</label>
+            <input type="password" id="new_password" name="password" />
+          </div>
+        </section>
+        <section class="section6">
+          <input type="submit" value="註冊" />
+        </section>
+    </form>
+    <hr></hr>
+    <!-- 登入表單區塊 -->
+    <form action="/signin" method="post" id="signinForm" novalidate>
+      <section class="section1">
+        <div class="login">登入系統</div>
+      </section>
+      <section class="section2">
+        <div class="account">
+          <label for="username">帳號</label>
+          <input type="text" id="username" name="username" />
+        </div>
+        <div class="password">
+          <label for="password">密碼</label>
+          <input type="password" id="password" name="password" />
+        </div>
+      </section>
+      <section class="section3">
+        <label for="agree">同意條款</label>
+        <input type="checkbox" id="agree" name="agreement" required />
+        <!-- 這裡的required屬性使复选框成为提交表单前的强制性选项。 -->
+      </section>
+      <section class="section4">
+        <input type="submit" value="登入" />
+      </section>
+    </form>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
